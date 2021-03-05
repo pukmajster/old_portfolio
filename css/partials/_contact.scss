@@ -1,0 +1,22 @@
+.contactRoot {
+    padding-top: 4.5em;
+    padding-bottom: 3.5em;
+    background: var(--contact);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+
+}
+
+#contactForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    
+    & > * {
+        flex: 1;
+    }
+}
