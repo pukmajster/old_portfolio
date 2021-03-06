@@ -9,9 +9,9 @@ function Header() {
             </div>
 
             <nav>
-                ${Link('About Me', '/')}
-                ${Link('Showcase', '/showcase')}
-                ${Link('Contact', '/contact')}
+                ${Link(localize.NAV_ABOUTME, '/')}
+                ${Link(localize.NAV_SHOWCASE, '/showcase')}
+                ${Link(localize.NAV_CONTACT, '/contact')}
             </nav>
         </header>
     `

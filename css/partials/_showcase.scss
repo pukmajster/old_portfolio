@@ -13,22 +13,27 @@
 .project {
 
     display: flex;
-    padding: 20px;
+    padding: 15px;
     position: relative;
+    border-radius: 3px;
 
     transition: box-shadow .2s ease ,background-color .2s ease;
-
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 12px 2px;
     // flex-direction: column;
-    padding: 20px;
+    padding: 15px;
     background-color: rgba(34, 34, 34, 0.555);
+    background-color: rgba(34, 34, 34, 0.733);
     // background-color: var(--surface);
     &:hover {
         // box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 12px 2px;
-        background-color: rgba(34, 34, 34, 0.555);
+        // background-color: rgba(34, 34, 34, 0.555);
+    }
+
+    .project__data {
+        // transform: translateX(-35px);
     }
 
     img {
-        // width: 100%;
         // transform: translateX(-35px);
         margin-right: 15px;
         transform-origin: 50% 50%;
@@ -36,16 +41,20 @@
     }
 
     .projectTitle {
-        font-size: 1rem;
-        margin-bottom: 0;
+        .projectTitleLabel {
+            font-size: 1rem;
+            line-height: 1.3rem;
+        }
+        margin-bottom: 15px;
 
         display: flex;
         justify-content: space-between;
+        // align-items: flex-start;
     }
 
     .projectDescription {
         // min-height: 90px;
-        margin-top: 12px;
+        // margin-top: 12px;
         font-size: .6rem;
         // padding-top: 19px;
     }
@@ -67,15 +76,22 @@
 }
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 860px) {
 
     #projects {
         // grid-template-columns: repeat(3, 1fr);
+        // max-width: 500px;
     }
 
     .project {
         flex-direction: column;
         padding: 20px;
+
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 15px;
+
     }
 
     .project img {
@@ -86,8 +102,10 @@
     }
 
     .projectTitle {
-        font-size: 1rem;
-        margin-bottom: 0;
+        p {
+            font-size: 1rem;
+        }
+        margin-top: 5px;
 
         display: flex;
         justify-content: space-between;
@@ -96,14 +114,20 @@
     
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 400px) {
    #projects {
-        grid-template-columns: repeat(2, 1fr);
+
+        .projectDescription {
+            // min-height: 90px;
+            // margin-top: 12px;
+            font-size: .7rem;
+            // padding-top: 19px;
+        }
     }
 }
 
-@media screen and (max-width: 800px) {
-    #projects {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
+// @media screen and (max-width: 800px) {
+//     #projects {
+//         grid-template-columns: repeat(1, 1fr);
+//     }
+// }
