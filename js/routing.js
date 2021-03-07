@@ -4,21 +4,26 @@ const routes = {
     '/contact': () => Contact()
 }
 
-const cached_renders = {};
 
+// TODO: Add proper routing ?
 
-
-
-
-function redirect(path) {
+function redirect(path, noPush = false) {
 
     // Check if the path is valid.
-    // if (!(path in myObj)) {
+    // if (!(path in routes)) {
+    //     redirect('/')
     //     return;
     // }
 
-    // window.history.pushState({}, path, window.location.origin + path);
-    let content;
+    let newUrl = window.location.origin + path;
+
+    // Don't redirect if we're already on the same page
+    // if(newUrl === window.location.href) {
+    //     return;
+    // }
+
+
+    // !noPush && window.history.pushState({}, path, window.location.origin + path);
     Render('content', routes[path]());
 
     document.querySelectorAll('header a').forEach(anchor => anchor?.classList.remove('current'));
@@ -26,8 +31,29 @@ function redirect(path) {
 }
 
 
-window.onpopstate = () => {
-    Render('content', routes[window.location.pathname]());
-}
+// window.onpopstate = () => {
+//     Render('content', routes[window.location.pathname]());
+// }
 
-window.onload = () => redirect('/');
+
+// window.addEventListener('hashchange', function(){
+//     let hash = `/${window.location.hash}`;
+//     if( hash in routes) {
+//         redirect(hash, true)
+//     }
+//     else redirect('/', true)
+// })
+
+
+window.onload = () => {
+    // let hash = window.location.hash;
+
+    // if(hash) {
+    //     redirect(`/${hash}`, true);
+    // } else {
+    //     redirect(`/`, true);
+    // }
+
+
+    redirect(`/contact`, true);
+};
