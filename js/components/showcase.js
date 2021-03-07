@@ -1,6 +1,17 @@
 
 
 function Showcase() {
+
+    const tags = {
+        node: localize['TAG_NODEJS'],
+        vanillaJs: localize['TAG_VANILLAJS'],
+
+        ts: localize['TAG_TS'],
+
+        react: localize['TAG_REACT'],
+        mui: localize['TAG_MUI'],
+    }
+
     return html`
         <section>
             <h1 class="heading">${localize.NAV_SHOWCASE}</h1>
@@ -8,36 +19,25 @@ function Showcase() {
             <div id="projects">
                 ${Project({
                     image: 'assets/showcase/lanparty.png',
-                    tags: ['Node.js', 'Vanilla JS'],
+                    tags: [tags.node, tags.vanillaJs],
                     title: 'Lan Party',
-                    description: `A very simple site that was used as the landing page for my high school's annual LAN Party event in 2020.`
+                    description: localize['SHOWCASE_LP_DESC']
                 })}
                 
                 ${Project({
                     image: 'assets/showcase/pud.png',
                     title: 'PUD',
-                    tags: ['Node.js', 'React'],
-                    description: `The digital solution to my schools problem of physical documents. Allows students to upload various
-                    documents that the school can then easily view and provide feedback directly to the student in a quick manner.`
+                    tags: [tags.node, tags.react, tags.mui],
+                    description: localize['SHOWCASE_PUD_DESC']
                 })}
 
                 ${Project({
-                    image: 'assets/showcase/lanparty.png',
-                    tags: ['Node.js', 'Vanilla JS'],
-                    title: 'Lan Party',
-                    description: `A very simple site that was used as the landing page for my high school's annual LAN Party event in 2020.`
+                    image: 'assets/showcase/bunker.png',
+                    tags: [tags.vanillaJs],
+                    title: 'Bunker',
+                    description: localize['SHOWCASE_BUNKER_DESC']
                 })}
-                
-                ${Project({
-                    image: 'assets/showcase/pud.png',
-                    title: 'PUD',
-                    tags: ['Node.js', 'React'],
-                    description: `The digital solution to my schools problem of physical documents. Allows students to upload various
-                    documents that the school can then easily view and provide feedback directly to the student in a quick manner.`
-                })}
-
-                </div>
-
+            </div>
         </section>
     `
 }
