@@ -47,8 +47,6 @@ body {
     // padding: 39px;
     // padding:  42px;
     // padding-top: 0;
-
-    
 }
 
 p {
@@ -139,11 +137,17 @@ section {
 @media (prefers-color-scheme: dark) {
     
 }
+
+#image-preload {
+    display: none;
+    pointer-events: none;
+}
   
 
 @import 'partials/_header';
 @import 'partials/_showcase';
 @import 'partials/_welcome';
+@import 'partials/_contact';
 
 
 ::-webkit-scrollbar {
