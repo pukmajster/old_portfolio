@@ -55,5 +55,5 @@ window.onload = () => {
     // }
 
 
-    redirect(`/contact`, true);
+    redirect(`/`, true);
 };
