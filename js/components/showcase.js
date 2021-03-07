@@ -50,7 +50,7 @@ function Project({image, title, tags = [], description}) {
     return html`
         <div class="project" >
             <!-- <div class="project__image" > -->
-                <img src="${image}"  width="320"  />
+                <img src="${image}"  width="270"  />
             <!-- </div> -->
 
 
