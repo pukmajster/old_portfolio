@@ -7,10 +7,10 @@
     box-sizing: border-box;
 }
 
-html, body {
-    width:100vw;
-    overflow-x:hidden;
-}
+// html, body {
+//     width:100vw;
+//     overflow-x:hidden;
+// }
 
 :root {
     font-family: 'Nunito', sans-serif;
@@ -19,10 +19,9 @@ html, body {
 
     --intro: rgb(28, 26, 58);
     --intro: rgb(36, 46, 105);
-    --body: rgb(12, 11, 11);
+    --body:  rgb(20, 20, 20);
     --contact:  rgb(19, 18, 18);
     --surface:  rgb(19, 18, 20);
-    --header:  rgb(91, 97, 37);
 
     --scrollThumb: #8a8383;
     --scrollThumb: rgb(69, 69, 71);
@@ -39,8 +38,10 @@ html, body {
 
 body {
     min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;   
+    overflow: hidden;
 
     // FANCY PADDING STUFF
     // padding: 39px;
@@ -60,11 +61,13 @@ p {
 }
 
 jacket#content {
-    min-height: 100%;
+    // min-height: 100%;
     display: block;
     flex: 1;
     background-color: rgb(0, 0, 0);
-    background-color: rgb(20, 20, 20);
+    background-color: var(--body);
+
+    overflow-y: auto;
 
     // box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 12px 2px;
 }
@@ -102,7 +105,7 @@ section {
 
 @media only screen and (max-width: 900px) {
     section {
-        padding-bottom: 5rem;
+        padding-bottom: 1rem;
     }
 
     body {
@@ -143,20 +146,21 @@ section {
 @import 'partials/_welcome';
 
 
-// ::-webkit-scrollbar {
-//     // width: 10px;
-//     width: 14px;
+::-webkit-scrollbar {
+    // width: 10px;
+    width: 14px;
 
-// }
-// ::-webkit-scrollbar-track {
-//     background: var(--scrollTrack);
-//     // background: rgb(12, 5, 27);
-// }
+}
+::-webkit-scrollbar-track {
+    background: var(--scrollTrack);
+    background: rgb(12, 5, 27);
+    background: transparent;
+}
 
-// ::-webkit-scrollbar-thumb {
-//     background: var(--scrollThumb);
-//     background: var(--gradient2);
-//     border: 4px solid var(--scrollTrack);
-//     border-radius: 45px;
-// }
+::-webkit-scrollbar-thumb {
+    background: var(--scrollThumb);
+    background: var(--gradient2);
+    border: 4px solid var(--body);
+    border-radius: 45px;
+}
 

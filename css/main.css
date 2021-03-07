@@ -7,21 +7,15 @@
           box-sizing: border-box;
 }
 
-html, body {
-  width: 100vw;
-  overflow-x: hidden;
-}
-
 :root {
   font-family: 'Nunito', sans-serif;
   font-family: 'Hind Siliguri', sans-serif;
   font-size: 28px;
   --intro: rgb(28, 26, 58);
   --intro: rgb(36, 46, 105);
-  --body: rgb(12, 11, 11);
+  --body:  rgb(20, 20, 20);
   --contact:  rgb(19, 18, 18);
   --surface:  rgb(19, 18, 20);
-  --header:  rgb(91, 97, 37);
   --scrollThumb: #8a8383;
   --scrollThumb: rgb(69, 69, 71);
   --scrollTrack: rgb(34, 32, 32);
@@ -35,6 +29,7 @@ html, body {
 
 body {
   min-height: 100vh;
+  max-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,6 +37,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
 }
 
 p {
@@ -54,13 +50,13 @@ p {
 }
 
 jacket#content {
-  min-height: 100%;
   display: block;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   background-color: black;
-  background-color: #141414;
+  background-color: var(--body);
+  overflow-y: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,7 +88,7 @@ section {
 
 @media only screen and (max-width: 900px) {
   section {
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
   }
   body {
     padding: 0px;
@@ -115,6 +111,12 @@ section {
   }
 }
 
+jacket#header {
+  -webkit-box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
 header {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -133,25 +135,22 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 48px;
   z-index: 10;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: 0 0 12px 2px rgba(11, 3, 31, 0.253);
-          box-shadow: 0 0 12px 2px rgba(11, 3, 31, 0.253);
   background-color: rgba(255, 255, 255, 0.089);
 }
 
-header h3 {
-  font-size: 2rem;
+header #header_title {
+  margin-top: .8rem;
+  margin-bottom: .1rem;
+  padding: 0 20px;
 }
 
-header #header_title {
-  margin-top: 1rem;
-  margin-bottom: .4rem;
-  padding: 0 20px;
+header #header_title h3 {
+  font-size: 1.7rem;
 }
 
 header #header_navToggler {
@@ -209,11 +208,17 @@ header a:hover {
   }
 }
 
-@media only screen and (max-width: 900px) {
-  header h3 {
-    font-size: 1rem;
-    padding-top: 3px;
+@media only screen and (max-width: 1100px) {
+  header #header_title {
+    margin-top: .8rem;
+    margin-bottom: .1rem;
   }
+  header #header_title h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
   header #header_navToggler {
     display: block;
     cursor: pointer;
@@ -235,6 +240,10 @@ header a:hover {
     width: 100%;
     margin-top: .6rem;
     margin-bottom: .6rem;
+  }
+  header #header_title h3 {
+    font-size: 1rem;
+    padding-top: 3px;
   }
   header nav {
     -webkit-box-orient: vertical;
@@ -292,10 +301,6 @@ footer {
   padding: 15px;
   position: relative;
   border-radius: 3px;
-  -webkit-transition: background-color .2s ease ,-webkit-box-shadow .2s ease;
-  transition: background-color .2s ease ,-webkit-box-shadow .2s ease;
-  transition: box-shadow .2s ease ,background-color .2s ease;
-  transition: box-shadow .2s ease ,background-color .2s ease ,-webkit-box-shadow .2s ease;
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 12px 2px;
           box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 12px 2px;
   padding: 15px;
@@ -303,7 +308,12 @@ footer {
   background-color: rgba(34, 34, 34, 0.733);
 }
 
+.project .project__data {
+  width: 100%;
+}
+
 .project img {
+  border-radius: 4px;
   margin-right: 15px;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
@@ -433,6 +443,7 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
     margin-bottom: 15px;
+    border-radius: 4px;
   }
   #aboutme_img_parent img {
     border-radius: 0;
@@ -446,5 +457,22 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
   }
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollTrack);
+  background: #0c051b;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollThumb);
+  background: var(--gradient2);
+  border: 4px solid var(--body);
+  border-radius: 45px;
 }
 /*# sourceMappingURL=main.css.map */
