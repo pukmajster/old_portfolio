@@ -6,6 +6,14 @@ function Render(id, html) {
     }
 }
 
+function Render2(elem, html) {
+    let root = document.querySelector(elem);
+    
+    if( root ) {
+        root.innerHTML = html;
+    }
+}
+
 // html() is a template literal tag. It simply returns the given string.
 // You can use it alongside 'lit-html' for html syntaxing in .js files.
 const html = (strings, ...values) => {

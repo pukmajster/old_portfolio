@@ -29,7 +29,7 @@ function toggleExpandedMenu(flag = null) {
 
 function Link(label, path) {
     return html`
-        <a data-path="${path}" href="#" onclick="redirect('${path}'); toggleExpandedMenu(false); return false; " >${label}</a>
+        <a data-path="${path}" style="cursor: pointer" onclick="redirect('${path}'); toggleExpandedMenu(false); return false; " >${label}</a>
     `
 }
 
