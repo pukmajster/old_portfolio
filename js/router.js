@@ -23,7 +23,9 @@ function router() {
     // Array.from(document.querySelectorAll('header a')).forEach(function(anchor) {
     //     anchor?.classList.remove('current')
     // });
-    // document.querySelector(`header a[data-path='/${request.resource}']`)?.classList.add('current');
+    document.querySelector(`header a[data-path='/${request.resource}']`)?.classList.add('current');
+
+
 
     // Collapse the mobile nav menu
     toggleExpandedMenu(false)
