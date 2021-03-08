@@ -16,7 +16,7 @@ function Render2(elem, htmlText) {
 
 // html() is a template literal tag. It simply returns the given string.
 // You can use it alongside 'lit-html' for html syntaxing in .js files.
-const html = (strings, ...values) => {
+function html(strings, ...values) {
     let str = '';
     strings.forEach((string, i) => {
         str += string + (values[i] || '');

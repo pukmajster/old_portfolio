@@ -6,7 +6,7 @@ const routes = {
     '/contact': () => Contact()
 }
 
-const router = () => {
+function router() {
 
     let r = (window.location.hash.slice(1).toLowerCase() || '/').split("/");
     let request = {

@@ -53,7 +53,6 @@ function Project({image, title, tags = [], description}) {
                 <img src="${image}"  width="270"  />
             <!-- </div> -->
 
-
             <div class="project__data" >
                 <div class="projectTitle" > 
                     
