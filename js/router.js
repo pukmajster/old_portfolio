@@ -19,8 +19,8 @@ function router() {
     let page = routes[parsedURL] ? routes[parsedURL] : ''
     Render('content', page());
 
-    // // Mark the current nav link in the header
-    Array.from(document.querySelectorAll('header a')).forEach(function(anchor) {
+    // Mark the current nav link in the header
+    document.querySelectorAll('header a').forEach(function(anchor) {
         anchor.classList.remove('current')
     });
     document.querySelector(`header a[data-path='/${request.resource}']`).classList.add('current');

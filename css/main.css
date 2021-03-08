@@ -197,7 +197,6 @@ header a {
 }
 
 header a.current {
-  font-size: 1rem;
   border-color: white;
   letter-spacing: 1px;
   font-weight: 700;
@@ -272,6 +271,9 @@ header a:hover {
   }
   header a:hover {
     background: #bbbbbb41;
+  }
+  header a.current {
+    font-size: 1rem;
   }
 }
 

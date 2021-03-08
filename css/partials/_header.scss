@@ -68,7 +68,7 @@ header {
         font-size: .8rem;
 
         &.current {
-            font-size: 1rem;
+            // font-size: 1rem;
             border-color: white;
             // background: #f5f5f515;
             letter-spacing: 1px;
@@ -158,6 +158,10 @@ header {
 
             &:hover {
                 background: #bbbbbb41;
+            }
+
+            &.current {
+                font-size: 1rem;
             }
         }
 
