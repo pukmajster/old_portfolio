@@ -9,9 +9,9 @@ function Header() {
             </div>
 
             <nav>
-                ${Link(localize.NAV_ABOUTME, '/')}
-                ${Link(localize.NAV_SHOWCASE, '/showcase')}
-                ${Link(localize.NAV_CONTACT, '/contact')}
+                ${Link(localize.NAV_ABOUTME, '/', '/#')}
+                ${Link(localize.NAV_SHOWCASE, '/showcase', '/#/showcase' )}
+                ${Link(localize.NAV_CONTACT,  '/contact', '/#/contact' )}
             </nav>
         </header>
     `
@@ -27,9 +27,9 @@ function toggleExpandedMenu(flag = null) {
     nav.classList.toggle('--expanded', flag)
 }
 
-function Link(label, path) {
+function Link(label, id, path) {
     return html`
-        <a data-path="${path}" style="cursor: pointer" onclick="redirect('${path}'); toggleExpandedMenu(false); return false; " >${label}</a>
+        <a data-path="${id}" href="${path}" style="cursor: pointer" >${label}</a>
     `
 }
 

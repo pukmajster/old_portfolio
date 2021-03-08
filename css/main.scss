@@ -42,11 +42,6 @@ body {
     display: flex;
     flex-direction: column;   
     overflow: hidden;
-
-    // FANCY PADDING STUFF
-    // padding: 39px;
-    // padding:  42px;
-    // padding-top: 0;
 }
 
 p {
@@ -59,15 +54,12 @@ p {
 }
 
 jacket#content {
-    // min-height: 100%;
     display: block;
     flex: 1;
     background-color: rgb(0, 0, 0);
     background-color: var(--body);
 
     overflow-y: scroll;
-
-    // box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 12px 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {
