@@ -20,7 +20,9 @@ function router() {
     Render('content', page());
 
     // Mark the current nav link in the header
-    document.querySelectorAll('header a').forEach(anchor => anchor?.classList.remove('current'));
+    document.querySelectorAll('header a').forEach(function(anchor) {
+        anchor?.classList.remove('current')
+    });
     document.querySelector(`header a[data-path='/${request.resource}']`)?.classList.add('current');
 
     // Collapse the mobile nav menu
