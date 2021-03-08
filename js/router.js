@@ -20,12 +20,10 @@ function router() {
     Render('content', page());
 
     // // Mark the current nav link in the header
-    // Array.from(document.querySelectorAll('header a')).forEach(function(anchor) {
-    //     anchor?.classList.remove('current')
-    // });
-    document.querySelector(`header a[data-path='/${request.resource}']`)?.classList.add('current');
-
-
+    Array.from(document.querySelectorAll('header a')).forEach(function(anchor) {
+        anchor.classList.remove('current')
+    });
+    document.querySelector(`header a[data-path='/${request.resource}']`).classList.add('current');
 
     // Collapse the mobile nav menu
     toggleExpandedMenu(false)
