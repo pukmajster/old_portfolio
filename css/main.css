@@ -21,7 +21,6 @@
   --scrollTrack: rgb(34, 32, 32);
   min-height: 100vh;
   background: linear-gradient(120deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
-  background: linear-gradient(120deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
   --gradient1: linear-gradient(120deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
   --gradient2: linear-gradient(120deg,  #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
   color: #f1ecfc;
@@ -37,7 +36,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: hidden;
 }
 
 p {
@@ -56,7 +54,6 @@ jacket#content {
           flex: 1;
   background-color: black;
   background-color: var(--body);
-  overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,13 +79,15 @@ section {
   margin: 0 auto;
   padding: 0 20px;
   padding-top: 2rem;
+  padding-top: 7.2rem;
   height: 100%;
   padding-bottom: 1em;
 }
 
 @media only screen and (max-width: 900px) {
   section {
-    padding-bottom: 1rem;
+    padding-bottom: 1.2rem;
+    padding-top: 4rem;
   }
   body {
     padding: 0px;
@@ -120,6 +119,11 @@ jacket#header {
   -webkit-box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.6);
   z-index: 3;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: linear-gradient(120deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
 }
 
 header {
@@ -500,9 +504,7 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--scrollTrack);
-  background: #0c051b;
-  background: transparent;
+  background: var(--body);
 }
 
 ::-webkit-scrollbar-thumb {
